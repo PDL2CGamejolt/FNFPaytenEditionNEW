@@ -1309,7 +1309,7 @@ class PlayState extends MusicBeatState
 			songTxt.visible = false;
 		}
 		add(songTxt);
-		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| Payten Edition v1 (OS " + MainMenuState.osEngineVersion; + ")"
+		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| Payten Edition v1, built on OS " + MainMenuState.osEngineVersion;
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "Hey, I think you need to get tested because I think I might've given you spamophobia...", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.LIGHTGREEN, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
