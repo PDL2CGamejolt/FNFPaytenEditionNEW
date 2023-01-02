@@ -1312,7 +1312,7 @@ class PlayState extends MusicBeatState
 		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| Payten Edition v1, built on OS " + MainMenuState.osEngineVersion;
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "Hey, I think you need to get tested because I think I might've given you spamophobia...", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.LIGHTGREEN, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.ORANGE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -4392,7 +4392,7 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '-pixel';
 		}
 
-		if (!cpucontrolled) {
+		if (!cpuControlled) {
 		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating.image + pixelShitPart2));
 		rating.cameras = [camHUD];
 		rating.screenCenter();
