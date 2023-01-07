@@ -2470,13 +2470,15 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ?'
-			+ ' | Grade: ' + ratingName;
+			+ ' | Grade: ' + ratingName
+			+ ' | Health: ' + healthBar.percent;
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
-			+ ' | ' + ratingName + ' [' + ratingFC + ']';
+			+ ' | ' + ratingName + ' [' + ratingFC + ']'
+			+ ' | Health: ' + healthBar.percent;
 		}
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
