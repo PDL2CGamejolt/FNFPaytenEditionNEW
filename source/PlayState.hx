@@ -274,6 +274,7 @@ class PlayState extends MusicBeatState
 
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
+	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
 	public var songTxt:FlxText;
 
@@ -2463,22 +2464,21 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	public static var Healthnumber = healthBar.percent;
 	public function updateScore(miss:Bool = false)
 	{
 		if(ratingName == '?') {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ?'
-			+ ' | Grade: ' + ratingName
-			+ ' | Health: ' + Healthnumber + '%';
+			+ ' | Grade: ' + ratingName;
+			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent * 100, 2) + '%' 
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
-			+ ' | ' + ratingName + ' [' + ratingFC + ']'
-			+ ' | Health: ' + Healthnumber + '%';
+			+ ' | ' + ratingName + ' [' + ratingFC + ']';
+			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent * 100, 2) + '%' 
 		}
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
