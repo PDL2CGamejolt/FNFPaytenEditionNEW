@@ -170,11 +170,11 @@ class MainMenuState extends MusicBeatState
 
 		var versionShit:FlxText = new FlxText(FlxG.width * 0.7, FlxG.height - 64, 0, "Payten Edition v" + Paytenedition, 12);
 		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.Orange, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.ORANGE, LEFT, FlxTextBorderStyle.OUTLINE, 0xFF502300);
 		add(versionShit);
 		var versionShit:FlxText = new FlxText(FlxG.width * 0.7, FlxG.height - 44, 0, "OS Engine v" + osEngineVersion + " - Modded Psych Engine", 12);
 		versionShit.scrollFactor.set();
-		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.YELLOW, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		versionShit.setFormat("VCR OSD Mono", 16, 0xFF30FF00, LEFT, FlxTextBorderStyle.OUTLINE, 0xFF016700);
 		add(versionShit);
 		var versionShit:FlxText = new FlxText(FlxG.width * 0.7, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
