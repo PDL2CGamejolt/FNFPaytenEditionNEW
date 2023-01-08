@@ -1140,7 +1140,7 @@ class PlayState extends MusicBeatState
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
-			timetxt.size = 24;
+			timeTxt.size = 24;
 			timeTxt.y += 3;
 		}
 
