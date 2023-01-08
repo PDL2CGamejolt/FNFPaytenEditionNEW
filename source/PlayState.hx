@@ -2470,17 +2470,28 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ?'
-			+ ' | Grade: ' + ratingName
-			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent * 100, 2) + '%';
+			+ ' | Grade: ' + ratingName;
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
-			+ ' | ' + ratingName + ' [' + ratingFC + ']'
-			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent * 100, 2) + '%';
+			+ ' | ' + ratingName + ' [' + ratingFC + ']';
 		}
-
+		if(!cpuControlled) {
+		        scoreTxt.text = 'You have spamophobia. You dont deserve to see your stats.';
+		}
+		if(!practiceMode) {
+			scoreTxt.text = 'Score: ' + songScore 
+			+ ' | Misses: ' + songMisses 
+			+ ' | Average MS: ?'
+			+ ' | Grade: ' + ratingName
+			+ ' | Practice Mode is on';
+		}		
+		if(!practiceMode && !cpuControlled) {
+			scoreTxt.text = 'You have spamophobia, AND you got Practice mode on? Lol, youre a coward.';
+		}
+		
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
 			if(scoreTxtTween != null) {
