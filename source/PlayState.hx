@@ -2471,7 +2471,7 @@ class PlayState extends MusicBeatState
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ?'
 			+ ' | Grade: ' + ratingName
-			+ ' | Health: 50";
+			+ ' | Health: 50';
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
