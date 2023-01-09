@@ -2478,17 +2478,17 @@ class PlayState extends MusicBeatState
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
 			+ ' | ' + ratingName + ' [' + ratingFC + ']';
 		}
-		if(!cpuControlled) {
+		if(not !cpuControlled) {
 		        scoreTxt.text = 'You have spamophobia. You dont deserve to see your stats.';
 		}
-		if(!practiceMode) {
+		if(not !practiceMode) {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average MS: ?'
 			+ ' | Grade: ' + ratingName
 			+ ' | Practice Mode is on';
 		}		
-		if(!practiceMode && !cpuControlled) {
+		if(not !practiceMode && !cpuControlled) {
 			scoreTxt.text = 'You have spamophobia, AND you got Practice mode on? Lol, youre a coward.';
 		}
 		
