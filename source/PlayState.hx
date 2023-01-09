@@ -2252,7 +2252,7 @@ class PlayState extends MusicBeatState
 					msTimeTxt.y = playerStrums.members[1].y+30;
 				} else {
 					msTimeTxt.x = playerStrums.members[1].x-100;
-					msTimeTxt.y = playerStrums.members[1].y+30;
+					msTimeTxt.y = playerStrums.members[1].y-50;
 				}
 
 				if (ClientPrefs.middleScroll) {
