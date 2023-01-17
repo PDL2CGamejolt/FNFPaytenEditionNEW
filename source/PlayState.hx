@@ -2469,14 +2469,16 @@ class PlayState extends MusicBeatState
 		if(ratingName == '?') {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
-			+ ' | Average MS: ?'
-			+ ' | Grade: ' + ratingName;
+			+ ' | Average Milliseconds: ?'
+			+ ' | Grade: ' + ratingName
+			+ ' | Deaths: ' + deathCounter;
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
-			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
+			+ ' | Average Milliseconds: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
-			+ ' | ' + ratingName + ' [' + ratingFC + ']';
+			+ ' | ' + ratingName + ' [' + ratingFC + ']'
+			+ ' | Deaths: ' + deathCounter;
 		}
 		
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
