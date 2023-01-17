@@ -114,7 +114,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = "./crash/" + "OSEngine_" + dateNow + ".txt";
+		path = "./crash/" + "PaytenEdition_" + dateNow + ".txt";
 
 		for (stackItem in callStack)
 		{
@@ -127,7 +127,7 @@ class Main extends Sprite
 			}
 		}
 
-		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/notweuz/FNF-OSEngine\n\n> Crash Handler written by: sqirra-rng";
+		errMsg += "\nUnexpected Twist: " + e.error + "\nPlease report this crash to the GitHub page: https://github.com/PDL2CGamejolt/FNFPaytenEditionNEW/issues\n\n> Crash Handler written by: sqirra-rng";
 
 		if (!FileSystem.exists("./crash/"))
 			FileSystem.createDirectory("./crash/");
@@ -137,7 +137,7 @@ class Main extends Sprite
 		Sys.println(errMsg);
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
-		Application.current.window.alert(errMsg, "Error!");
+		Application.current.window.alert(errMsg, "Your game has crashed. Check below!");
 		DiscordClient.shutdown();
 		Sys.exit(1);
 	}
