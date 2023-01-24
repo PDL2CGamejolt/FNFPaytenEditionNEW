@@ -71,10 +71,6 @@ import sys.io.File;
 import sys.FileSystem;
 #end
 
-#if VIDEOS_ALLOWED
-import VideoHandler;
-#end
-
 using StringTools;
 
 class PlayState extends MusicBeatState
@@ -1759,7 +1755,7 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
-		var video:VideoHandler = new VideoHandler();
+		var video:MP4Handler = new MP4Handler();
 		video.playVideo(filepath);
 		video.finishCallback = function()
 		{
