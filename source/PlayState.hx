@@ -2471,14 +2471,18 @@ class PlayState extends MusicBeatState
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average Milliseconds: ?'
 			+ ' | Grade: ' + ratingName
-			+ ' | Deaths: ' + deathCounter;
+			+ ' | Deaths: ' + deathCounter
+			+ ' | Combo: ' + combo
+			+ ' | Total Notes Hit: ' + songHits;
 		} else {
 			scoreTxt.text = 'Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
 			+ ' | Average Milliseconds: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
 			+ ' | ' + ratingName + ' [' + ratingFC + ']'
-			+ ' | Deaths: ' + deathCounter;
+			+ ' | Deaths: ' + deathCounter
+			+ ' | Combo: ' + combo
+			+ ' | Total Notes Hit: ' + songHits;
 		}
 		
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
@@ -3063,10 +3067,10 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		/*if (FlxG.keys.justPressed.NINE)
+		if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
-		}*/
+		}
 		callOnLuas('onUpdate', [elapsed]);
 		callOnHScripts('update', [elapsed]);
 
@@ -5556,12 +5560,13 @@ class PlayState extends MusicBeatState
 
 			// Rating FC
 			ratingFC = "";
-			if (perfects > 0 && !ClientPrefs.removePerfects) ratingFC = "PFC";
-			if (sicks > 0) ratingFC = "SFC";
-			if (goods > 0) ratingFC = "GFC";
-			if (bads > 0 || shits > 0) ratingFC = "FC";
-			if (songMisses > 0 && songMisses < 10) ratingFC = "SDCB";
-			else if (songMisses >= 10) ratingFC = "Clear";
+			if (perfects > 0 && !ClientPrefs.removePerfects) ratingFC = "Perfect Full Combo";
+			if (sicks > 0) ratingFC = "Sick Full Combo";
+			if (goods > 0) ratingFC = "Good Full Combo";
+			if (bads > 0 || shits > 0) ratingFC = "Full Combo";
+			if (songMisses > 0 && songMisses < 10) ratingFC = "Single Digit Mess Up";
+			if (songMisses > 10 && songMisses < 100) ratingFC = "Double Digit Mess Up";
+			else if (songMisses >= 100) ratingFC = "Pass";
 		}
 		setOnLuas('rating', ratingPercent);
 		setOnLuas('ratingName', ratingName);
@@ -5638,7 +5643,7 @@ class PlayState extends MusicBeatState
 							unlock = true;
 						}
 					case 'debugger':
-						if(Paths.formatToSongPath(SONG.song) == 'test' && !usedPractice) {
+						if(Paths.formatToSongPath(SONG.song) == 'test') {
 							unlock = true;
 						}
 				}
