@@ -66,6 +66,7 @@ import Conductor.Rating;
 import hscript.Interp;
 import hscript.Parser;
 import HscriptHandler;
+import vlc.MP4Handler;
 #if sys
 import sys.io.File;
 import sys.FileSystem;
@@ -1755,7 +1756,7 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
-		var video:VideoHandler = new VideoHandler();
+		var video:MP4Handler = new MP4Handler();
 		video.playVideo(filepath);
 		video.finishCallback = function()
 		{
