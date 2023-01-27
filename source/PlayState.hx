@@ -441,7 +441,7 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			detailsText = "Freeplay";
+			detailsText = "Song Menu";
 		}
 
 		// String for when the game is paused
@@ -510,7 +510,7 @@ class PlayState extends MusicBeatState
 			cameraSpeed = stageData.camera_speed;
 
 		boyfriendCameraOffset = stageData.camera_boyfriend;
-		if(boyfriendCameraOffset == null) //Fucks sake should have done it since the start :rolling_eyes:
+		if(boyfriendCameraOffset == null) //BRUBS sake should have done it since the start :rolling_eyes:
 			boyfriendCameraOffset = [0, 0];
 
 		opponentCameraOffset = stageData.camera_opponent;
@@ -1070,13 +1070,13 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		laneunderlayOp = new FlxSprite(0, 0).makeGraphic(110 * 4 + 50, FlxG.height * 2);
-		laneunderlayOp.color = FlxColor.BLACK;
+		laneunderlayOp.color = FlxColor.RED;
 		laneunderlayOp.scrollFactor.set();
         laneunderlayOp.alpha = ClientPrefs.opponentUnderlaneVisibility-1;
         laneunderlayOp.visible = true;
 
 		laneunderlay = new FlxSprite(0, 0).makeGraphic(110 * 4 + 50, FlxG.height * 2);
-		laneunderlay.color = FlxColor.BLACK;
+		laneunderlay.color = FlxColor.BLUE;
 		laneunderlay.scrollFactor.set();
         laneunderlay.alpha = ClientPrefs.underlaneVisibility - 1;
         laneunderlay.visible = true;
@@ -1137,7 +1137,7 @@ class PlayState extends MusicBeatState
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
-			timeTxt.size = 19;
+			timeTxt.size = 10;
 			timeTxt.y += 3;
 		}
 
@@ -3322,7 +3322,7 @@ class PlayState extends MusicBeatState
 					if(secondsTotal < 0) secondsTotal = 0;
 
 					if(ClientPrefs.timeBarType != 'Song Name')
-						timeTxt.text = 'Song: ' + SONG.song + ' - ' + 'Time: (' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
+						timeTxt.text = SONG.song + ' | ' + '(' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
 				}
 			}
 
