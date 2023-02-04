@@ -102,7 +102,8 @@ class FreeplayState extends MusicBeatState
 		}*/
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuFreePlay'));
-		FlxG.sound.music.play(Paths.music("freakyFree"));
+		Conductor.changeBPM(140.0);
+		FlxG.sound.playMusic(Paths.music('secondmenu'), 1, true);
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.screenCenter();
