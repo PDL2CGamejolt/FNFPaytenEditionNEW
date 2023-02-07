@@ -27,7 +27,7 @@ class FlashingState extends MusicBeatState
 			"Hey, watch out!\n
 			This mod contains flashing lights,\n
                         loud sounds, cringy stuff, and hard songs!\n
-                        There may be swearing or sexual references too.\n
+                        There may be swearing, creepy imagery, and sexual references too.\n
 			Press ENTER to be a coward and disable the flashing lights.\n
                         Turn down your computer volume to prevent your ears from bleeding\n
                         and your computer speakers to be blown.\n
