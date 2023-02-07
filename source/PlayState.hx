@@ -1096,8 +1096,8 @@ class PlayState extends MusicBeatState
 	  	add(laneunderlay);
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 10);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 10, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 16);
+		timeTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
 		timeTxt.borderSize = 2;
@@ -1146,7 +1146,7 @@ class PlayState extends MusicBeatState
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
-			timeTxt.size = 10;
+			timeTxt.size = 16;
 			timeTxt.y += 3;
 		}
 
@@ -2473,15 +2473,15 @@ class PlayState extends MusicBeatState
 	public function updateScore(miss:Bool = false)
 	{
 		if(ratingName == '?') {
-			scoreTxt.text = 'Score: ' + songScore 
+			scoreTxt.text = 'Song Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
-			+ ' | Average Milliseconds: ?'
+			+ ' | Average MS: ?'
 			+ ' | Grade: ' + ratingName
 			+ ' | Deaths: ' + deathCounter;
 		} else {
-			scoreTxt.text = 'Score: ' + songScore 
+			scoreTxt.text = 'Song Score: ' + songScore 
 			+ ' | Misses: ' + songMisses 
-			+ ' | Average Milliseconds: ' + Math.round(averageMs) + 'ms'
+			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
 			+ ' | ' + ratingName + ' [' + ratingFC + ']'
 			+ ' | Deaths: ' + deathCounter;
