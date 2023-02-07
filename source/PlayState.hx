@@ -2255,7 +2255,7 @@ class PlayState extends MusicBeatState
 			if (ClientPrefs.showMsText) {
 				if (ClientPrefs.downScroll) {
 					msTimeTxt.x = playerStrums.members[1].x-100;
-					msTimeTxt.y = playerStrums.members[1].y+50;
+					msTimeTxt.y = playerStrums.members[1].y-50;
 				} else {
 					msTimeTxt.x = playerStrums.members[1].x-100;
 					msTimeTxt.y = playerStrums.members[1].y-50;
