@@ -849,6 +849,15 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank4', 1300, 900, 1.5, 1.5, ['fg']));
 				foregroundSprites.add(new BGSprite('tank5', 1620, 700, 1.5, 1.5, ['fg']));
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
+		         case 'transparentbgbaseforvantablack': // Vantablack and Everbound BG
+		                 var trans:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.fromRGB(1, 1, 1));
+                                 if (defaultCamZoom < 1)
+                                 {
+                                   trans.scale.scale(1 / defaultCamZoom);
+                                 }
+                                 trans.scrollFactor.set();
+                                 add(trans);
+		                 FlxTransWindow.getWindowsTransparent();
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
