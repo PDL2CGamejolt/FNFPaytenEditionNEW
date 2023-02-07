@@ -1087,7 +1087,7 @@ class PlayState extends MusicBeatState
 	  	add(laneunderlay);
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 10);
+		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 5);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
@@ -1137,7 +1137,7 @@ class PlayState extends MusicBeatState
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
-			timeTxt.size = 10;
+			timeTxt.size = 5;
 			timeTxt.y += 3;
 		}
 
@@ -2246,7 +2246,7 @@ class PlayState extends MusicBeatState
 			if (ClientPrefs.showMsText) {
 				if (ClientPrefs.downScroll) {
 					msTimeTxt.x = playerStrums.members[1].x-100;
-					msTimeTxt.y = playerStrums.members[1].y+30;
+					msTimeTxt.y = playerStrums.members[1].y+50;
 				} else {
 					msTimeTxt.x = playerStrums.members[1].x-100;
 					msTimeTxt.y = playerStrums.members[1].y-50;
