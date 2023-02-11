@@ -85,14 +85,14 @@ class PauseSubState extends MusicBeatSubstate
 		levelInfo.updateHitbox();
 		add(levelInfo);
 
-		var levelDifficulty:FlxText = new FlxText(20, 15 + 32, 0, "", 32);
-		levelDifficulty.text += "Difficulty: " + CoolUtil.difficultyString();
+		var levelDifficulty:FlxText = new FlxText(20, 15 - 99, 0, "", 32);
+		levelDifficulty.text += "";
 		levelDifficulty.scrollFactor.set();
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
 		levelDifficulty.updateHitbox();
 		add(levelDifficulty);
 
-		var blueballedTxt:FlxText = new FlxText(20, 15 + 64, 0, "", 32);
+		var blueballedTxt:FlxText = new FlxText(20, 15 + 32, 0, "", 32);
 		blueballedTxt.text = "Deaths: " + PlayState.deathCounter;
 		blueballedTxt.scrollFactor.set();
 		blueballedTxt.setFormat(Paths.font('vcr.ttf'), 32);
@@ -110,8 +110,8 @@ class PauseSubState extends MusicBeatSubstate
 		var chartingText:FlxText = new FlxText(20, 15 + 101, 0, "You are in Charting Mode.", 32);
 		chartingText.scrollFactor.set();
 		chartingText.setFormat(Paths.font('vcr.ttf'), 32);
-		chartingText.x = FlxG.width - (chartingText.width + 20);
-		chartingText.y = FlxG.height - (chartingText.height + 20);
+		chartingText.x = FlxG.width - (chartingText.width - 40);
+		chartingText.y = FlxG.height - (practiceText.height + 20);
 		chartingText.updateHitbox();
 		chartingText.visible = PlayState.chartingMode;
 		add(chartingText);
