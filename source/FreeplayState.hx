@@ -35,7 +35,6 @@ class FreeplayState extends MusicBeatState
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
-	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var lerpRating:Float = 0;
 	var intendedScore:Int = 0;
@@ -151,10 +150,6 @@ class FreeplayState extends MusicBeatState
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
-
-		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
-		diffText.font = scoreText.font;
-		add(diffText);
 
 		add(scoreText);
 
@@ -429,7 +424,6 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		PlayState.storyDifficulty = curDifficulty;
-		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
 		positionHighscore();
 	}
 
@@ -537,8 +531,6 @@ class FreeplayState extends MusicBeatState
 
 		scoreBG.scale.x = FlxG.width - scoreText.x + 6;
 		scoreBG.x = FlxG.width - (scoreBG.scale.x / 2);
-		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
-		diffText.x -= diffText.width / 2;
 	}
 }
 
