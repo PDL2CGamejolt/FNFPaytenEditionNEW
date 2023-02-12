@@ -160,17 +160,30 @@ class ChartingState extends MusicBeatState
 	var zoomTxt:FlxText;
 
 	var zoomList:Array<Float> = [
+		0.1,
 		0.25,
 		0.5,
+		0.75,
 		1,
 		2,
 		3,
 		4,
 		6,
 		8,
-		12,
+		12
+		14
 		16,
-		24
+		18,
+		20,
+		24,
+		32,
+		48,
+		64,
+		96,
+		128,
+		192,
+		256,
+		512
 	];
 	var curZoom:Int = 2;
 
@@ -216,12 +229,12 @@ class ChartingState extends MusicBeatState
 			CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 
 			_song = {
-				song: 'Test',
+				song: 'Tutorial',
 				notes: [],
 				events: [],
 				characterTrails: false,
 				bfTrails: false,
-				bpm: 150.0,
+				bpm: 100.0,
 				songInstVolume: 1.0,
 				needsVoices: true,
 				cameraMoveOnNotes: false,
@@ -230,9 +243,9 @@ class ChartingState extends MusicBeatState
 				arrowSkin: '',
 				splashSkin: 'noteSplashes',//idk it would crash if i didn't
 				player1: 'bf',
-				player2: 'dad',
+				player2: 'gf',
 				gfVersion: 'gf',
-				speed: 1,
+				speed: 2,
 				stage: 'stage',
 				validScore: false,
 				disableAntiMash: false,
@@ -361,7 +374,7 @@ class ChartingState extends MusicBeatState
 		\nUp/Down - Change Conductor's Strum Time with Snapping
 		\nHold Shift to move 4x faster
 		\nHold Control and click on an arrow to select it
-		\nZ/X - Zoom in/out
+		\nZ/X - Zoom in/out (0.1 to 512)
 		\nHold Right Mouse - Placing notes by dragging mouse
 		\nEsc - Test your chart inside Chart Editor
 		\nEnter - Play your chart
@@ -706,7 +719,7 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(new FlxText(songinstVolumeOBJ.x, songinstVolumeOBJ.y - 25, 0, 'Ingame Instrumental \nVolume:'));
 		tab_group_song.add(new FlxText(stepperBPM.x, stepperBPM.y - 15, 0, 'Song BPM:'));
 		tab_group_song.add(new FlxText(stepperBPM.x + 100, stepperBPM.y - 15, 0, 'Song Offset:'));
-		tab_group_song.add(new FlxText(stepperSpeed.x, stepperSpeed.y - 15, 0, 'Song Speed:'));
+		tab_group_song.add(new FlxText(stepperSpeed.x, stepperSpeed.y - 15, 0, 'Scroll Speed:'));
 		tab_group_song.add(new FlxText(player2DropDown.x, player2DropDown.y - 15, 0, 'Opponent:'));
 		tab_group_song.add(new FlxText(gfVersionDropDown.x, gfVersionDropDown.y - 15, 0, 'Girlfriend:'));
 		tab_group_song.add(new FlxText(player1DropDown.x, player1DropDown.y - 15, 0, 'Boyfriend:'));
@@ -1137,12 +1150,12 @@ class ChartingState extends MusicBeatState
 		});
 		blockPressWhileScrolling.push(eventDropDown);
 
-		var text:FlxText = new FlxText(20, 90, 0, "Value 1:");
+		var text:FlxText = new FlxText(20, 90, 0, "Event Value 1:");
 		tab_group_event.add(text);
 		value1InputText = new FlxUIInputText(20, 110, 100, "");
 		blockPressWhileTypingOn.push(value1InputText);
 
-		var text:FlxText = new FlxText(20, 130, 0, "Value 2:");
+		var text:FlxText = new FlxText(20, 130, 0, "Event Value 2:");
 		tab_group_event.add(text);
 		value2InputText = new FlxUIInputText(20, 150, 100, "");
 		blockPressWhileTypingOn.push(value2InputText);
