@@ -170,8 +170,8 @@ class ChartingState extends MusicBeatState
 		4,
 		6,
 		8,
-		12
-		14
+		12,
+		14,
 		16,
 		18,
 		20,
