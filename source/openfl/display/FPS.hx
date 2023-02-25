@@ -46,7 +46,7 @@ class FPS extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
+		defaultTextFormat = new TextFormat("_sans", 6, color);
 		autoSize = LEFT;
 		multiline = true;
 		text = "FPS: ";
@@ -92,7 +92,7 @@ class FPS extends TextField
 			text += "\nBuilt on OS v"+ MainMenuState.osEngineVersio;
 			#end
 
-			textColor = 0xFFFFFFFF;
+			textColor = 0xFF00FF00;
 			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
 			{
 				textColor = 0xFFFF0000;
