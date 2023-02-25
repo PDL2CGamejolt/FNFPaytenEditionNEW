@@ -88,6 +88,8 @@ class FPS extends TextField
 			#if openfl
 			memoryMegas = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
 			text += "\nMemory: " + memoryMegas + " MB";
+			text += "\nPayten Edition v"+ MainMenuState.Paytenedition;
+			text += "\nBuilt on OS v"+ MainMenuState.osEngineVersio;
 			#end
 
 			textColor = 0xFFFFFFFF;
