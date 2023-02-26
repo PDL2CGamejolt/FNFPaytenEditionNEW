@@ -321,8 +321,8 @@ class TitleState extends MusicBeatState
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 				gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-				gfDance.animation.addByIndices('danceLeft', 'gfDance', [0, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4], "", 24, false);
-				gfDance.animation.addByIndices('danceRight', 'gfDance', [0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4], "", 24, false);
+				gfDance.animation.addByIndices('danceLeft', 'gfDance', [0, 0, 1, 2, 3, 4], "", 12, false);
+				gfDance.animation.addByIndices('danceRight', 'gfDance', [0, 0, 1, 2, 3, 4], "", 12, false);
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 
@@ -631,17 +631,17 @@ class TitleState extends MusicBeatState
 				case 1:
 					//FlxG.sound.music.stop();
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-					FlxG.sound.music.fadeIn(4, 0, 0.7);
-					createCoolText(['OS Engine by'], 45);
+					createCoolText(['Payten Edition by'], 45);
 				case 2:
-					addMoreText('weuz_', 45);
-					addMoreText('nelifs', 45);
-					addMoreText('Cooljer', 45);
+					addMoreText('SunkyQTHybrid', 45);
+					addMoreText('Kooker', 45);
+					addMoreText('DatGamerYolo', 45);
+					addMoreText('and Others', 45);
 				case 3:
 					deleteCoolText();
 					createCoolText(['Forked', 'from'], 15);
 				case 4:
-					addMoreText('Psych Engine', 45);
+					addMoreText('OS and Psych Engine', 45);
 				case 6:
 					deleteCoolText();
 					createCoolText(['Psych Engine by'], 45);
@@ -734,7 +734,7 @@ class TitleState extends MusicBeatState
 			{
 				remove(ngSpr);
 				remove(credGroup);
-				FlxG.camera.flash(FlxColor.WHITE, 4);
+				FlxG.camera.flash(FlxColor.GREEN, 4);
 
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;
 				if (easteregg == null) easteregg = '';
