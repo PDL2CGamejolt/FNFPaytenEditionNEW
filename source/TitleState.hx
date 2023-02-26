@@ -630,7 +630,7 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+					FlxG.sound.playMusic(Paths.music('freakyMenu'), 1);
 					createCoolText(['Payten Edition by'], 45);
 				case 2:
 					addMoreText('SunkyQTHybrid', 45);
@@ -734,7 +734,7 @@ class TitleState extends MusicBeatState
 			{
 				remove(ngSpr);
 				remove(credGroup);
-				FlxG.camera.flash(FlxColor.GREEN, 4);
+				FlxG.camera.flash(FlxColor.WHITE, 1);
 
 				var easteregg:String = FlxG.save.data.psychDevsEasterEgg;
 				if (easteregg == null) easteregg = '';
