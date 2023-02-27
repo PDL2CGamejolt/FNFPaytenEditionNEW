@@ -44,17 +44,17 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 
 		var option:GameplayOption = new GameplayOption('Scroll Speed', 'scrollspeed', 'float', 1);
 		option.scrollSpeed = 1.5;
-		option.minValue = 0.5;
+		option.minValue = 0.1;
 		option.changeValue = 0.1;
 		if (goption.getValue() != "constant")
 		{
 			option.displayFormat = '%vX';
-			option.maxValue = 3;
+			option.maxValue = 250;
 		}
 		else
 		{
 			option.displayFormat = "%v";
-			option.maxValue = 6;
+			option.maxValue = 250;
 		}
 		optionsArray.push(option);
 
@@ -69,7 +69,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		var option:GameplayOption = new GameplayOption('Health Gain Multiplier', 'healthgain', 'float', 1);
 		option.scrollSpeed = 2.5;
 		option.minValue = 0;
-		option.maxValue = 10;
+		option.maxValue = 25;
 		option.changeValue = 0.1;
 		option.displayFormat = '%vX';
 		optionsArray.push(option);
@@ -77,7 +77,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		var option:GameplayOption = new GameplayOption('Health Loss Multiplier', 'healthloss', 'float', 1);
 		option.scrollSpeed = 2.5;
 		option.minValue = 0;
-		option.maxValue = 10;
+		option.maxValue = 25;
 		option.changeValue = 0.1;
 		option.displayFormat = '%vX';
 		optionsArray.push(option);
