@@ -1315,10 +1315,12 @@ class PlayState extends MusicBeatState
 			songTxt.visible = false;
 		}
 		add(songTxt);
-		songTxt.text = curSong + "| Payten Edition v1, built on OS " + MainMenuState.osEngineVersion;
+		songTxt.text = curSong + " | Payten Edition v1, built on OS " + MainMenuState.osEngineVersion;
 
-		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "Hey, I think you need to get tested because I think I might've given you spamophobia...", 32);
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.YELLOW, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
+		var texts:Array<String> = ["Hey, I think you need to get tested because I think I might've given you spamophobia...", "I'm banning you", "HACKER", "CHEATER", "!ban", "Does Dollianne from Breckwood dressed as Pauline from Donkey Kong remind you of GF From FNF?"]; // place here strings, and separated by comas
+		var daRandomInt:Int = FlxG.random.int(0, texts.length-1);
+		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, texts[daRandomInt], 32);
+		botplayTxt.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.YELLOW, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
