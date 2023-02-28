@@ -26,7 +26,7 @@ class FlashingState extends MusicBeatState
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Hey, watch out!\n
 			This mod contains flashing lights,\n
-                        loud sounds, cringy stuff, and hard songs!\n
+                        loud sounds, cringy stuff, and spammy songs!\n
                         There may be swearing, creepy imagery, and sexual references too.\n
 			Press ENTER to be a coward and disable the flashing lights.\n
                         Turn down your computer volume to prevent your ears from bleeding\n
