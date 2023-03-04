@@ -2476,20 +2476,22 @@ class PlayState extends MusicBeatState
 	{
 		if(ratingName == '?') {
 			scoreTxt.text = 'Song Score: ' + songScore 
-			+ ' | Misses: ' + songMisses 
+			+ ' | Mishits: ' + songMisses 
 			+ ' | Average MS: ?'
 			+ ' | Grade: ' + ratingName
-			+ ' | Deaths: ' + deathCounter;
+			+ ' | Deaths: ' + deathCounter
+			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent, 2) + '%';
 		} else {
 			scoreTxt.text = 'Song Score: ' + songScore 
-			+ ' | Misses: ' + songMisses 
+			+ ' | Mishits: ' + songMisses 
 			+ ' | Average MS: ' + Math.round(averageMs) + 'ms'
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
 			+ ' | ' + ratingName + ' [' + ratingFC + ']'
-			+ ' | Deaths: ' + deathCounter;
+			+ ' | Deaths: ' + deathCounter
+			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent, 2) + '%';
 		}
 		
-		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
+		if(ClientPrefs.scoreZoom && !miss)
 		{
 			if(scoreTxtTween != null) {
 				scoreTxtTween.cancel();
