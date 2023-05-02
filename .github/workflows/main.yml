@@ -33,7 +33,7 @@ jobs:
           haxelib install hxcpp > nul
           haxelib install lime
           haxelib install openfl
-          haxelib --never install flixel
+          haxelib install flixel 4.11.0
           haxelib run lime setup flixel
           haxelib run lime setup
           haxelib install flixel-tools
@@ -42,6 +42,7 @@ jobs:
           haxelib install tjson
           haxelib install hxjsonast
           haxelib install hxCodec 2.5.1
+          haxelib install flixel-addons 2.11.0 
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
