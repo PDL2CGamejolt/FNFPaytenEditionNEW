@@ -1317,7 +1317,7 @@ class PlayState extends MusicBeatState
 		add(songTxt);
 		songTxt.text = curSong + " | Payten Edition v1, built on OS " + MainMenuState.osEngineVersion;
 
-		var texts:Array<String> = ["Hey, I think you need to get tested because I think I might've given you spamophobia...", "I'm banning you", "HACKER", "CHEATER", "!ban", "Bruh", "Sussy Baka", "Chloe followed me on SU"]; // place here strings, and separated by comas
+		var texts:Array<String> = ["Hey, I think you need to get tested because I think I might've given you spamophobia...", "I'm banning you", "HACKER", "CHEATER", "!ban", "Bruh", "Sussy Baka", "CiCis Pizza", "Angel Jose has became relatable to me", "I'm non binary"]; // place here strings, and separated by comas
 		var daRandomInt:Int = FlxG.random.int(0, texts.length-1);
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, texts[daRandomInt], 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.YELLOW, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
