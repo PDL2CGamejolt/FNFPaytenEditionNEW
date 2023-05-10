@@ -2480,7 +2480,6 @@ class PlayState extends MusicBeatState
 			+ ' | Average MS: ?'
 			+ ' | Grade: ' + ratingName
 			+ ' | Deaths: ' + deathCounter
-			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent, 2) + '%';
 		} else {
 			scoreTxt.text = 'Song Score: ' + songScore 
 			+ ' | Mishits: ' + songMisses 
@@ -2488,7 +2487,6 @@ class PlayState extends MusicBeatState
 			+ ' | Grade: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' 
 			+ ' | ' + ratingName + ' [' + ratingFC + ']'
 			+ ' | Deaths: ' + deathCounter
-			+ ' | Health: ' + Highscore.floorDecimal(healthBar.percent, 2) + '%';
 		}
 		
 		if(ClientPrefs.scoreZoom && !miss)
