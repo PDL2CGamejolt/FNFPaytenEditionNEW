@@ -45,10 +45,6 @@ class PauseSubState extends MusicBeatSubstate
 				menuItemsOG.insert(3, 'Skip Time');
 			}
 
-		if(PlayState.chartingMode)
-		{
-			menuItemsOG.insert(2, 'Leave Charting Mode');
-		}
 		menuItems = menuItemsOG;
 
 		for (i in 0...CoolUtil.difficulties.length) {
