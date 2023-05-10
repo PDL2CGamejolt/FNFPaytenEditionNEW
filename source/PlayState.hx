@@ -218,7 +218,7 @@ class PlayState extends MusicBeatState
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
-	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
+	var dialogue:Array<String> = ['blah blah blah', 'coolswag', 'HOLY VANTABLACK!', 'Alright Bambi, Lets go to CiCis Pizza.', 'ARSE'];
 	var dialogueJson:DialogueFile = null;
 
 	var dadbattleBlack:BGSprite;
@@ -1317,7 +1317,7 @@ class PlayState extends MusicBeatState
 		add(songTxt);
 		songTxt.text = curSong + " | Payten Edition, built on OS " + MainMenuState.osEngineVersion;
 
-		var texts:Array<String> = ["Hey, I think you need to get tested because I think I might've given you spamophobia...", "I'm banning you", "HACKER", "CHEATER", "!ban", "Bruh", "Sussy Baka", "CiCis Pizza", "Angel Jose has became relatable to me", "I'm non binary", "HOLY VANTABLACK!"]; // place here strings, and separated by comas
+		var texts:Array<String> = ["Hey, I think you need to get tested because I think I might've given you spamophobia...", "I'm banning you", "HACKER", "CHEATER", "!ban", "Bruh", "Sussy Baka", "CiCis Pizza", "Angel Jose has became relatable to me", "I'm non binary", "HOLY VANTABLACK!", "Nipples XD", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]; // place here strings, and separated by comas
 		var daRandomInt:Int = FlxG.random.int(0, texts.length-1);
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, texts[daRandomInt], 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.YELLOW, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.RED);
@@ -3335,7 +3335,7 @@ class PlayState extends MusicBeatState
 					if(secondsTotal < 0) secondsTotal = 0;
 
 					if(ClientPrefs.timeBarType != 'Song Name')
-						timeTxt.text = SONG.song + ' | ' + '(' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
+						timeTxt.text = SONG.song + ' | ' + '( Time: ' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
 				}
 			}
 
