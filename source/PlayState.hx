@@ -3601,7 +3601,8 @@ class PlayState extends MusicBeatState
 		paused = true;
 		cancelMusicFadeTween();
 		MusicBeatState.switchState(new ChartingState());
-		chartingMode = true;
+                // charting mode is removed.
+		chartingMode = false;
 
 		#if desktop
 		DiscordClient.changePresence("Chart Editor", null, null, true);
@@ -5572,7 +5573,8 @@ class PlayState extends MusicBeatState
 			if (bads > 0 || shits > 0) ratingFC = "Full Combo";
 			if (songMisses > 0 && songMisses < 10) ratingFC = "Single Digit Mess Up";
 			if (songMisses > 10 && songMisses < 100) ratingFC = "Double Digit Mess Up";
-			else if (songMisses >= 100) ratingFC = "Pass";
+			if (songMisses > 100 && songMisses < 1000) ratingFC = "Skill Issue";
+			else if (songMisses >= 1000) ratingFC = "Maybe you should try base FNFs Week 1 again";
 		}
 		setOnLuas('rating', ratingPercent);
 		setOnLuas('ratingName', ratingName);
