@@ -3333,7 +3333,7 @@ class PlayState extends MusicBeatState
 					if(secondsTotal < 0) secondsTotal = 0;
 
 					if(ClientPrefs.timeBarType != 'Song Name')
-						timeTxt.text = SONG.song + ' | ' + '( Time: ' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
+						timeTxt.text = SONG.song + ' | ' + '(Time: ' + FlxStringUtil.formatTime(secondsTotal, false) + ')';
 				}
 			}
 
