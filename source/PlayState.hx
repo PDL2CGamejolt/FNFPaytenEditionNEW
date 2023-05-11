@@ -2488,13 +2488,6 @@ class PlayState extends MusicBeatState
 			+ ' | ' + ratingName + ' [' + ratingFC + ']'
 			+ ' | Deaths: ' + deathCounter;
 		}
-
-		if(!cpuControlled) {
-			scoreTxt.text = 'Song Score: ' + songScore 
-			+ ' | Grade: ' + ratingName
-			+ ' | Deaths: ' + deathCounter
-                        + ' | BOTPLAY ' ;
-		}
 		
 		if(ClientPrefs.scoreZoom && !miss)
 		{
